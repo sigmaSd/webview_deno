@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - main
+      - temp_fork
 
 jobs:
   publish:
