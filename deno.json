@@ -1,6 +1,6 @@
 {
-  "name": "@webview/webview",
-  "version": "0.8.1",
+  "name": "@sigmasd/webview-temp-fork",
+  "version": "0.9.0",
   "exports": "./mod.ts",
   "lock": false,
   "tasks": {
@@ -13,9 +13,15 @@
     "run": "deno task build && export PLUGIN_URL=\"./build/\" && deno run -A --unstable-ffi",
     "run:fast": "export PLUGIN_URL=\"./build/\" && deno run -A --unstable-ffi"
   },
-  "unstable": ["ffi"],
+  "unstable": [
+    "ffi"
+  ],
   "fmt": {
-    "exclude": ["webview/"]
+    "exclude": [
+      "webview/"
+    ]
   },
-  "imports": { "@denosaurs/plug": "jsr:@denosaurs/plug@^1.0.6" }
+  "imports": {
+    "@denosaurs/plug": "jsr:@denosaurs/plug@^1.0.6"
+  }
 }
