@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - main
+      - temp_fork
     paths:
       - ".github/workflows/**"
       - "script/build.*"
@@ -69,17 +69,16 @@ jobs:
             build/*.dylib
             build/*.so
 
-      # - name: Release Plugin
-      #   uses: softprops/action-gh-release@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: "webview_deno release"
-      #     draft: true
-      #     files: |
-      #       build/libwebview.x86_64.dylib
-      #       build/libwebview.aarch64.dylib
-      #       build/libwebview.x86_64.so
-      #       build/libwebview.aarch64.so
-      #       build/webview.dll
-      #       build/Webview2Loader.dll
+      - name: Release Plugin
+        uses: softprops/action-gh-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "webview_deno release"
+          files: |
+            build/libwebview.x86_64.dylib
+            build/libwebview.aarch64.dylib
+            build/libwebview.x86_64.so
+            build/libwebview.aarch64.so
+            build/webview.dll
+            build/Webview2Loader.dll
