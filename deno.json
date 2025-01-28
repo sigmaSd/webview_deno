@@ -1,6 +1,6 @@
 {
   "name": "@sigmasd/webview-temp-fork",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "exports": "./mod.ts",
   "lock": false,
   "tasks": {
